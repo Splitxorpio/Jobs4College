@@ -1,0 +1,233 @@
+*{
+    margin: 0;
+}
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  left: 0;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+#homepagetop{
+  background-color:rgb(84, 112, 187);
+  width: 80%;
+}
+
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #006eff;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  cursor: pointer;
+  font-size: 20px;
+  background-color: whitesmoke;
+  color: rgb(3, 97, 151);
+  border: none;
+  left: 0%;
+  top: 0%;
+  text-align: center;
+  transition-duration: 0.45s;
+  border: 2px solid gainsboro;
+  left: 1%;
+  top: 15px;
+  border-radius: 250px;
+  padding: 20px;
+  padding-right: 30px;
+  text-align: center;
+  padding-left: 30px;
+  position: sticky;
+}
+.openbtn:hover {
+  transition-duration: 0.45s;
+  background-color: whitesmoke;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+*{
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+} 
+
+.home-text {
+    font-size: 1.5em;
+    position: relative;
+    top: 10%;
+    text-align: center;
+}
+
+.img-fluid{
+    transition-duration: 0.45s;
+    border-radius: 10px;
+    position: relative;
+    transform: scale(0.9);
+}
+
+.img-fluid:hover{
+    transition-duration: 0.45s;
+    box-shadow: 5px 10px black;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+.row{
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+}
+
+.home-text-two{
+    top: 10%;
+    position: relative;
+    font-size: 1.5em;
+    text-align: center;
+}
+.hr{
+    width:  80%;
+    height: 1.5px;
+    background-color: gainsboro;
+    position: relative;
+}
+footer{
+    padding-top: 10px;
+}
+.container-object{
+    background-color: whitesmoke;
+    padding: 20px;
+    border: 2px solid gray;
+    border-radius: 15px;
+    width: 45%;
+    padding-right: 0px;
+    padding-left: 0px;
+    position: relative;
+}
+
+blockquote {
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
+#aboutUsImage {
+  width: 120%;
+}
+
+.personal-pics{
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+.link{
+  background-color: #004AAD;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  position: relative;
+  left: 46%;
+}
+.link:hover{
+  transform: scale(1.04);
+  color: white;
+}
+.col-lg-6{
+  text-align: center;
+}
+.hrtwo{
+    width:  80%;
+    height: 1.5px;
+    background-color: gainsboro;
+    position: relative;
+}
+.olink{
+  background-color: #004AAD;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  position: relative;
+}
+.olink:hover{
+  transform: scale(1.04);
+  color: white;
+}
+section{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}

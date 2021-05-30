@@ -1,0 +1,1109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job List - Jobs4College</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="../stylesheets/style.css">
+    <link rel="stylesheet" href="../stylesheets/footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <button class="openbtn animate-bottom" onclick="openNav()">&#9776;</button>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="index.html">Home Page</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+        <a href="signing.php">Sign In</a>
+        <hr style="height: 3px; color: white;">
+        </hr>
+        <a href="#compsci">Computer Science</a>
+        <a href="#medical">Medical</a>
+        <a href="#law">Law</a>
+        <a href="#science">Science</a>
+        <a href="#mechanicalengineering">Mechanical Engineering</a>
+        <a href="#unskilledlabor">Minimal Experience Jobs</a>
+        <a href="#realestate">Real Estate</a>
+        <a href="#bankingfinance">Banking/Finance</a>
+        <a href="#electricalengineer">Electrical Engineer</a>
+        <a href="#construction">Construction</a>
+        <a href="#military">Military</a>
+        <a href="#insurance">Insurance</a>
+        <a href="#film">Film</a>
+    </div>
+    <div class="container">
+        <h1 class="h1 mb-5 text-center">Add a new job</h1>
+        <div class="row mb-5">
+            <div class="col">
+                <form action="" id="newJobForm">
+                    <div class="mb-2">
+                        <label for="title" class="form-label">Job Title</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Job Title" required>
+                    </div>
+                    <div class="mb-2">
+                        <label for="location" class="form-label">Location</label>
+                        <input type="text" name="location" class="form-control" id="location" placeholder="City, State"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="prerequisites" class="form-label">Pre-Requisites</label>
+                        <input type="text" name="prerequisites" class="form-control" id="prerequisites"
+                            placeholder="Prerequisites go here" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="contact" class="form-label">Email</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com"
+                            required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="additionalInfo" class="form-label">Additional Info Link</label>
+                        <input type="text" name="additionalInfo" class="form-control" id="additionalInfo"
+                            placeholder="Some link goes here" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Job Pay $</span>
+                        <input type="text" name="pay" id="pay" class="form-control" aria-label="Amount (to the nearest dollar)"
+                            required>
+                        <span class="input-group-text">.00</span>
+                    </div>
+                    <h5>Categories</h5>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="compsci" id="computerscienceRadio">
+                        <label class="form-check-label" for="computerscienceRadio">Computer Science</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="medical" id="medicineRadio">
+                        <label class="form-check-label" for="medicineRadio">Medicine</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="law" id="lawRadio">
+                        <label class="form-check-label" for="lawRadio">Law</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="science" id="scienceRadio">
+                        <label class="form-check-label" for="scienceRadio">Science</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="mechanicalengineering"
+                            id="mechanicalengineeringRadio">
+                        <label class="form-check-label" for="mechanicalengineeringRadio">Mechanical Engineering</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="unskilledlabor" id="unskilledlaborRadio">
+                        <label class="form-check-label" for="unskilledlaborRadio">Unskilled Labor</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="finance" id="financeRadio">
+                        <label class="form-check-label" for="financeRadio">Finance</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="realestate" id="realestateRadio">
+                        <label class="form-check-label" for="realestateRadio">Real Estate</label>
+                    </div>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="radio" name="construction" id="constructionRadio">
+                        <label class="form-check-label" for="constructionRadio">Construction</label>
+                    </div>
+                    <div class="mb-4">
+                        <label for="description" class="form-label">1-2 Sentence description of job:</label>
+                        <textarea class="form-control" id="description" name="description" rows="3"
+                            placeholder="Description goes here" required></textarea>
+                    </div>
+                    <button class="btn btn-primary" id="formSubmit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="hr mb-3"></div>
+
+        <h1 class="title">
+            Job List
+        </h1>
+        <p>Listed by type of job</p>
+        <br>
+        <div class="hr"></div>
+        <br>
+        <h1>Computer Science</h1>
+        <br>
+        <div class="hr"></div>
+        <br>
+        <!-------------------->
+        <section id="compsci">
+        <div class="container-object">
+            <h4>Software Developer</h4>
+            <p>Around $80,000/yr</p>
+            <p> Location: Remote or in office</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Comp Sci (or related field)</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Job/software-developer-jobs-SRCH_KO0,18.htm">APPLY NOW</a>
+        </div>
+        <br>
+        <!-------------------->
+        <div class="container-object">
+            <h4>Cybersecurity Developer</h4>
+            <p>Around $80,000/yr</p>
+            <p> Location: Remote or in office</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Comp Sci (or related field)</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Job/cybersecurity-analyst-jobs-SRCH_KO0,21.htm">APPLY NOW</a>
+        </div>
+        <br>
+        <!-------------------->
+        <div class="container-object">
+            <h4>UX Designer</h4>
+            <p>Around $90,000/yr</p>
+            <p> Location: Remote or in office</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Comp Sci (or related field)</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Job/ux-designer-jobs-SRCH_KO0,11.htm">APPLY NOW</a>
+        </div>
+        <br>
+        <!-------------------->
+        <div class="container-object">
+            <h4>Game Designer</h4>
+            <p>Around $70,000/yr</p>
+            <p> Location: Remote or in office</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Comp Sci (or related field)</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Job/game-designer-jobs-SRCH_KO0,13.htm">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Computer Systems Analyst</h4>
+            <p>Around $80,000/yr</p>
+            <p> Location: Remote or in office</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Comp Sci (or related field)</li>
+            </ol>
+            <br>
+            <a
+                href="https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Computer%20Systems%20Analyst&sc.keyword=Computer%20Systems%20Analyst">APPLY
+                NOW</a>
+        </div>
+        </section> <!------------------------------------------------------------------------Section-1-->
+        <br>
+        <div class="hr"></div>
+        <br>
+        <h1>Medical</h1>
+        <br>
+        <div class="hr">
+        </div>
+        <br>
+        <!-------------------->
+        <section id="medical">
+        <div class="container-object">
+            <h4>General Physician</h4>
+            <p>Around $150,000/yr</p>
+            <p> Location: Private clinic or health care center</p>
+            <ol>Prerequisites:
+                <li>MD (Doctor of Medicine) or DO (Doctor of Osteopathic Medicine) degree, 3 years residency</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Jobs/General-Physician-Jobs-E944886.htm">APPLY NOW</a>
+        </div>
+        <br>
+        <!-------------------->
+        <div class="container-object">
+            <h4>Psychiatrist</h4>
+            <p>Around $200,000/yr</p>
+            <p> Location: Private clinic, office, nursing home, school, psychiatric hospital</p>
+            <ol>Prerequisites:
+                <li>Degree in psychiatry, four years residency</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Psychiatrist%20Jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <!-------------------->
+        <div class="container-object">
+            <h4>General Surgeon</h4>
+            <p>Around $270,000/yr</p>
+            <p> Location: Hospital</p>
+            <ol>Prerequisites:
+                <li>Medical License, degree in specialised surgical field, five years residency</li>
+            </ol>
+            <br>
+            <a
+                href="https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=General%20Surgeon&sc.keyword=General%20Surgeon">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Nurse</h4>
+            <p>Around $100,000/yr</p>
+            <p> Location: Private clinic, school, nursing home, hospital</p>
+            <ol>Prerequisites:
+                <li>Associate Nursing degree</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Nurse%20Jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Pharmacist</h4>
+            <p>Around $120,000/yr</p>
+            <p> Location: Drugstore, private clinic, pharmacist store chain</p>
+            <ol>Prerequisites:
+                <li>PharmD degree</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Nurse%20Jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="hr"></div>
+        <br>
+        <h1>Law</h1>
+        <br>
+        <div class="hr">
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Tax Attorney</h4>
+            <p>Around $60,000/yr</p>
+            <p> Location: Law firm</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Legal Studies
+                    Law License
+                </li>
+            </ol>
+            <br>
+            <a
+                href="https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Tax%20Attorney&sc.keyword=Tax%20Attorney">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Legal Assistant</h4>
+            <p>Around $30,000/yr</p>
+            <p> Location: Law firm</p>
+            <ol>Prerequisites:
+                <li>None</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Legal%20Assistant%20Jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>IP Attorney</h4>
+            <p>Around $150,000/yr</p>
+            <p> Location: Law firm</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Legal Studies
+                    Law License
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=IP%20Attorney%20Jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Judge</h4>
+            <p>Around $150,000/yr</p>
+            <p> Location: Courtroom</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Legal Studies
+                    Law License
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Judge%20Jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Patent Attorney</h4>
+            <p>Around $250,000/yr</p>
+            <p> Location: Law firm</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Legal Studies/Physical sciences,
+                    Law License, obtaining <a href="https://www.uspto.gov/">USPTO</a> registration
+                </li>
+            </ol>
+            <br>
+            <a
+                href="https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Patent%20Attorney&sc.keyword=Patent%20Attorney">APPLY
+                NOW</a>
+        </div>
+        <br>
+        </section> <!----------------------------------Section-2-->
+        <div class="hr"></div>
+        <br>
+        <h1>Science</h1>
+        <br>
+        <div class="hr">
+        </div>
+        <br>
+        <section id="science">
+        <div class="container-object">
+            <h4>Biochemical Engineer</h4>
+            <p>Around $60,000/yr</p>
+            <p> Location: Labratory</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Chemical/Biochemical Engineering</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Biochemical%20Engineer">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Biology Research Associate</h4>
+            <p>Around $100,000/yr (With PhD)</p>
+            <p> Location: Labratory</p>
+            <ol>Prerequisites:
+                <li>Previous research experience,
+                    Masters or PhD in related field ex: Cell Biology
+                </li>
+            </ol>
+            <br>
+            <a
+                href="https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Biology%20Research%20Associate&sc.keyword=Biology%20Research%20Associate">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Environmental Scientist</h4>
+            <p>Around $60,000/yr</p>
+            <p> Location: Labratory or office</p>
+            <ol>Prerequisites: Bachelor's or Masters degree in related field ex: biology, geosciences, chemistry, etc.
+                <li></li>
+            </ol>
+            <br>
+            <a
+                href="https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Environmental%20Scientist&sc.keyword=Environmental%20Scientist">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Microbiologist</h4>
+            <p>Around $60,000/yr</p>
+            <p> Location: Labratory</p>
+            <ol>Prerequisites: Bachelor's or Masters degree in closely related field ex: biology.
+                <li></li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Microbiologist%20Jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Forensic Scientist</h4>
+            <p>Around $60,000/yr</p>
+            <p> Location: Laboratory</p>
+            <ol>Prerequisites: Bachelor's degree in forensic science (or related field)
+                <li></li>
+            </ol>
+            <br>
+            <a
+                href="https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Forensic%20Scientist&sc.keyword=Forensic%20Scientist">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="hr"></div>
+        <br>
+        </section> <!------------------------------------------Section-3-->
+        <h1>Mechanical Engineering</h1>
+        <br>
+        <div class="hr">
+        </div>
+        <br>
+        <section id="mechanicalengineering">
+        <div class="container-object">
+            <h4>Aerospace Engineer</h4>
+            <p>Around $100,000/yr</p>
+            <p> Location: Office or aerospace labratory</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in aerospace engineering (or related field)
+                </li>
+            </ol>
+            <br>
+            <a
+                href="https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Aerospace%20Engineer&sc.keyword=Aerospace%20Engineer">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Automotive Engineer</h4>
+            <p>Around $65,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in mechanical engineering (or related field)
+                </li>
+            </ol>
+            <br>
+            <a
+                href="https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Automotive%20Engineer&sc.keyword=Automotive%20Engineer">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Powertrain Engineer</h4>
+            <p>Around $100,000/yr</p>
+            <p> Location: Design lab or manufacturing center</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in mechanical engineering (or related field)
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Powertrain%20Engineer">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Instrumentation Engineer</h4>
+            <p>Around $110,000/yr</p>
+            <p> Location: Manufacturing center</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in mechanical engineering (or related field)
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Instrumentation%20Engineer%20jobs">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Systems Design Engineer</h4>
+            <p>Around $100,000/yr</p>
+            <p> Location: Office, data center, or manufacturing center</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in mechanical engineering (or related field)
+                </li>
+            </ol>
+            <br>
+            <a
+                href="https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Systems%20Design%20Engineer&sc.keyword=Systems%20Design%20Engineer">APPLY
+                NOW</a>
+        </div>
+        <br>
+        </section> <!-----------------------------Section-4-->
+        <div class="hr"></div>
+        <br>
+        <h1>Minimal Experience Jobs</h1>
+        <br>
+        <div class="hr">
+        </div>
+        <br>
+        <section id="unskilledlabor">
+        <div class="container-object">
+            <h4>Fast Food Cashier</h4>
+            <p>Around $10/hr</p>
+            <p> Location: Fast food restaraunt</p>
+            <ol>Prerequisites:
+                <li>None</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=fast%20food%20cashier%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Restaraunt Server</h4>
+            <p>Around $12/hr</p>
+            <p> Location: Restaraunt</p>
+            <ol>Prerequisites:
+                <li>None</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=restaraunt%20server%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Dishwasher</h4>
+            <p>Around $10/hr</p>
+            <p>Location: Restaraunt, movie theater, cafeteria</p>
+            <ol>Prerequisites:
+                <li>None</li>
+            </ol>
+            <br>
+            <a
+                href="https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Dishwasher&sc.keyword=Dishwasher">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Lifeguard</h4>
+            <p>Around $12/hr</p>
+            <p> Location: Swimming pool, beach, waterpark</p>
+            <ol>Prerequisites:
+                <li>Attain CPR certification, pass swimming test</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=lifeguard%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Lawn Mower</h4>
+            <p>Around $18/hr</p>
+            <p> Location: Landscapes</p>
+            <ol>Prerequisites:
+                <li>None</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=lawn%20mower%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Nanny</h4>
+            <p>Around $19/hr</p>
+            <p> Location: Home, daycare center</p>
+            <ol>Prerequisites:
+                <li>None</li>
+            </ol>
+            <br>
+            <a href="https://www.care.com/landingPage-p1523-q151594528.html">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Busser</h4>
+            <p>Around $10/hr</p>
+            <p> Location: Restaraunt</p>
+            <ol>Prerequisites:
+                <li>None</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Busser%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Janitor</h4>
+            <p>Around $10/hr</p>
+            <p> Location: Restaraunt, office, school, library, hospital, clinic, and more</p>
+            <ol>Prerequisites:
+                <li>None</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=janitor%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Stocking Associate</h4>
+            <p>Around $12/hr</p>
+            <p> Location: Grocery Store, hardware store, retail store</p>
+            <ol>Prerequisites:
+                <li>None</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=stocking%20associate%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Bartender</h4>
+            <p>Around $12/hr</p>
+            <p> Location: Bar, club</p>
+            <ol>Prerequisites:
+                <li>None</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=bartender%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        </section> <!----------------------------------Section-5-->
+        <div class="hr"></div>
+        <br>
+        <h1>Real Estate</h1>
+        <br>
+        <div class="hr">
+        </div>
+        <br>
+        <br>
+        <section id="realestate">
+        <div class="container-object">
+            <h4>Real Estate Broker</h4>
+            <p>Around $70,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li>60-90 training hours</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=bartender%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Real Estate Developer</h4>
+            <p>Around $80,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li>Real estate license, bachelor's degree in real estate</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=bartender%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Property Manager</h4>
+            <p>Around $100,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li>Obtain <a
+                        href="https://www.irem.org/certifications/for-individuals/cpm-certified-property-manager">CPM®</a>
+                    certification</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=bartender%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Home Inspector</h4>
+            <p>Around $60,000/yr</p>
+            <p> Location: Office, private homes</p>
+            <ol>Prerequisites:
+                <li>35 states in the United States require the <a
+                        href="https://nationalhomeinspectorexam.org/stateregulations/">National Home Inspector
+                        Examination®</a> to be taken for home inspectors</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=bartender%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Real Estate Wholesaler</h4>
+            <p>Around $80,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li>None</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=bartender%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="hr"></div>
+        </section>
+        <br>
+        <h1>Banking/Finance</h1>
+        <br>
+        <div class="hr">
+        </div>
+        <br>
+        <section id="finance">
+        <div class="container-object">
+            <h4>Equity Analyst</h4>
+            <p>Around $85,000/yr</p>
+            <p> Location: Financial advisory firm</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Finance (or related field)</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=equity%20analyst%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Bank Teller</h4>
+            <p>Around $30,000/yr</p>
+            <p> Location: Bank</p>
+            <ol>Prerequisites:
+                <li>None</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=bank%20teller%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Credit Analyst</h4>
+            <p>Around $70,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Finance (or related field)</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Job/ux-designer-jobs-SRCH_KO0,11.htm">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Asset Manager</h4>
+            <p>Around $70,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Finance (or related field)</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Asset%20Manager%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Budget Analyst</h4>
+            <p>Around $60,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Finance (or related field)</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Budget%20Analyst%20jobs">APPLY NOW</a>
+        </div>
+        <br>
+        </section>
+        <div class="hr"></div>
+        <br>
+        <h1>Electrical Engineer</h1>
+        <br>
+        <div class="hr">
+        </div>
+        <br>
+        <section id="electricalengineer">
+        <div class="container-object">
+            <h4>Aerospace Electrical Engineer</h4>
+            <p>Around $85,000/yr</p>
+            <p> Location: Aerospace lab or aerospace manufacturing center</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Aerospace Engineering (or related field)</li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Aerospace%20Electrical%20Engineer%20jobs">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Principal Electrical Engineer</h4>
+            <p>Around $120,000/yr</p>
+            <p> Location: Manufacturing center</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Electrical Engineering (or related field), 3+ years experience in related field
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Principal%20Electrical%20Engineer%20jobs">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Electronic Design Engineer</h4>
+            <p>Around $100,000/yr</p>
+            <p> Location: Manufacturing center</p>
+            <ol>Prerequisites:
+                <li>Bachelor's Degree in Electrical Engineering (or related field) 3+ years experience in related field
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.glassdoor.com/Search/results.htm?keyword=Electronic%20Design%20Engineer%20jobs">APPLY
+                NOW</a>
+        </div>
+        <br>
+        </section>
+        <div class="hr"></div>
+        <br>
+        <h1>Construction</h1>
+        <br>
+        <div class="hr">
+        </div>
+        <br>
+        <section id="construction">
+        <div class="container-object">
+            <h4>Construction Inspector</h4>
+            <p>Around $50,000/yr</p>
+            <p> Location: Construction site</p>
+            <ol>Prerequisites:
+                <li>None
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/jobs?q=construction+inspector&l=">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Roofer</h4>
+            <p>Around $40,000/yr</p>
+            <p> Location: Construction site on roof</p>
+            <ol>Prerequisites:
+                <li>None
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/jobs?q=Roofing&l=">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Brick Mason</h4>
+            <p>Around $35,000/yr</p>
+            <p> Location: Construction site on roads or other</p>
+            <ol>Prerequisites:
+                <li>None
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/q-Brick-Masonry-jobs.html">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Skyscraper Worker</h4>
+            <p>Around $45,000/yr</p>
+            <p>Location: Construction site for skyscrapers</p>
+            <ol>Prerequisites:
+                <li>None
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/q-High-Rise-Construction-jobs.html">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Construction Project Manager</h4>
+            <p>Around $100,000/yr</p>
+            <p> Location: Office or construction site</p>
+            <ol>Prerequisites:
+                <li>Bachelor's degree in construction managment (or related field)
+                </li>
+            </ol>
+            <br>
+            <a
+                href="https://www.glassdoor.com/Job/jobs.htm?context=Jobs&suggestCount=0&suggestChosen=false&clickSource=searchBox&typedKeyword=Construction%20Project%20Manager&sc.keyword=Construction%20Project%20Manager">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Construction Estimator</h4>
+            <p>Around $65,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li>Bachelor's degree in construction managment (or related field)
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/jobs?q=Construction+Estimator&l=">APPLY
+                NOW</a>
+        </div>
+        <br>
+        </section>
+        <div class="hr"></div>
+        <br>
+        <h1>Military</h1>
+        <br>
+        <div class="hr">
+        </div>
+        <br>
+        <section id="military">
+        <div class="container-object">
+            <h4>Air Force Pilot</h4>
+            <p>Around $100,000/yr</p>
+            <p> Location: Military base or war zone</p>
+            <ol>Prerequisites:
+                <li>Bachelor's degree in aerospace engineering (or related field)
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.airforce.com/careers/detail/pilot">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Marine Corps Military Police</h4>
+            <p>Around $50,000/yr</p>
+            <p> Location: Military base or war zone</p>
+            <ol>Prerequisites:
+                <li>Standard marine boot camp training
+                </li>
+            </ol>
+            <br>
+            <a
+                href="https://rmi.marines.com/request-information/G_Enlist_Join_Exact?gclid=CjwKCAjwzMeFBhBwEiwAzwS8zAG-bwZTUZEFqMroiVYtpdOyqCgWJ1mko0ECLk8SMtxTggtNCbuq1RoCoEcQAvD_BwE&gclsrc=aw.ds">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Navy Nurse</h4>
+            <p>Around $100,000/yr</p>
+            <p> Location: Military base, sea vessel, or war zone</p>
+            <ol>Prerequisites:
+                <li>CCNE accredited Bachelor's degree in nursing
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.navy.com/careers/nursing">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Army Linguist</h4>
+            <p>Around $60,000/yr</p>
+            <p> Location: Location: Military base or war zone</p>
+            <ol>Prerequisites:
+                <li>Military linguist training
+                </li>
+            </ol>
+            <br>
+            <a
+                href="https://www.goarmy.com/linguist/about/linguist.html?iom=ARRN-21-NMTF_N_PSEA_71700000078080323_700000002151505_43700059473984244_58700006579490667_army+linguist&gclid=Cj0KCQjw78yFBhCZARIsAOxgSx3q5cMpQgCucslGPVnkmLLQGiaqwcnDwzfZqzbnAepDUiAKKBZSj_MaAo5YEALw_wcB&gclsrc=aw.ds">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Coast Guard Operations Specialist</h4>
+            <p>Around $50,000/yr</p>
+            <p> Location: Military base or sea vessel</p>
+            <ol>Prerequisites:
+                <li> OS school training
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.gocoastguard.com/active-duty-careers/enlisted-opportunities/view-job-descriptions/os">APPLY
+                NOW</a>
+        </div>
+        <br>
+        </section>
+        <div class="hr"></div>
+        <br>
+        <h1>Insurance</h1>
+        <br>
+        <div class="hr">
+        </div>
+        <br>
+        <section id="insurance">
+        <div class="container-object">
+            <h4>Risk Analyst</h4>
+            <p>Around $70,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li> Bachelor's degree in statistics (or related field)
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/jobs?q=risk+Analyst&l=">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Underwriter Assistant</h4>
+            <p>Around $45,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li> None, but Bachelor's degree in finance (or related field) recommended
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/jobs?q=underwriter+assistant&l=">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Insurance Assistant</h4>
+            <p>Around $40,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li> None
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/jobs?q=insurance+assistant&l=">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Financial Analyst</h4>
+            <p>Around $60,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li> Bachelor's degree in statistics (or related field)
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/q-Financial-Analyst-jobs.html">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Insurance Agent</h4>
+            <p>Around $60,000/yr</p>
+            <p> Location: Office</p>
+            <ol>Prerequisites:
+                <li> State insurance license
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/jobs?q=insurance+agent&l=">APPLY
+                NOW</a>
+        </div>
+        <br>
+        </section>
+        <div class="hr"></div>
+        <br>
+        <h1>Film</h1>
+        <br>
+        <div class="hr">
+        </div>
+        <br>
+        <section id="film">
+        <div class="container-object">
+            <h4>Makeup Artist</h4>
+            <p>Around $75,000/yr</p>
+            <p> Location: Studio or private shop</p>
+            <ol>Prerequisites:
+                <li>Some states require Esthetician License
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/jobs?q=movie+makeup+artist&l=">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Set Designer</h4>
+            <p>Around $55,000/yr</p>
+            <p> Location: Studio or office</p>
+            <ol>Prerequisites:
+                <li> Bachelor's degree in interior design (or related field)
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.linkedin.com/jobs/search?keywords=Movie%20Set%20Designer&location=United%20States&geoId=103644278&trk=public_jobs_jobs-search-bar_search-submit&position=1&pageNum=0">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Movie Editor</h4>
+            <p>Around $50,000/yr</p>
+            <p> Location: Studio or office</p>
+            <ol>Prerequisites:
+                <li> Bachelor's degree in cinematography (or related field) recommended
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/jobs?q=film+editor&l=">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Movie Director</h4>
+            <p>Around $100,000+/yr depending on film success</p>
+            <p> Location: Studio or office</p>
+            <ol>Prerequisites:
+                <li> Prior experience Bachelor of Arts (BA) or Bachelor of Fine Arts (BFA) recommended
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.indeed.com/jobs?q=movie+director&l=">APPLY
+                NOW</a>
+        </div>
+        <br>
+        <div class="container-object">
+            <h4>Prop Master</h4>
+            <p>Around $45,000/yr</p>
+            <p> Location: Studio</p>
+            <ol>Prerequisites:
+                <li> Bachelor's degree in technical theatre (or related field)
+                </li>
+            </ol>
+            <br>
+            <a href="https://www.media-match.com/usa/media/jobtypes/prop-master-jobs-402764.php">APPLY
+                NOW</a>
+        </div>
+        <br>
+        </section>
+    </div>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+    crossorigin="anonymous"></script>
+<script src="../scripts/script.js"></script>
+<script src="../scripts/newJob.js"></script>
+</html>
